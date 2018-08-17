@@ -3,17 +3,25 @@ import {
     Platform, 
     StyleSheet, 
     Text, 
-    View
+    View,
+    TouchableOpacity
 } from 'react-native';
 
-interface SettingProps {
+interface ChatProps {
     navigator: Navigator
 }
-export default class App extends React.Component<SettingProps> {
+export default class App extends React.Component<ChatProps> {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Push content here</Text>
+        <Text style={styles.welcome}>Chat Message</Text>
+
+        <TouchableOpacity onPress={() => this.props.navigator.push({
+            screen: 'ProfileScreen',
+            title: 'Profile of someone'
+        })}>
+            <Text style={styles.welcome}>Click to show profile</Text>
+        </TouchableOpacity>
       </View>
     );
   }

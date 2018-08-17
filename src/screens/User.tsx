@@ -3,17 +3,24 @@ import {
     Platform, 
     StyleSheet, 
     Text, 
-    View
+    View,
+    TouchableOpacity
 } from 'react-native';
 
-interface ChatProps {
+interface UserProps {
     navigator: Navigator
 }
-export default class App extends React.Component<ChatProps> {
+
+export default class App extends React.Component<UserProps> {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Chat Message</Text>
+        <TouchableOpacity onPress={() => this.props.navigator.push({
+            screen: 'Settings',
+            title: 'Settings'
+        })}>
+            <Text style={styles.welcome}>Click to see Setting</Text>
+        </TouchableOpacity>
       </View>
     );
   }

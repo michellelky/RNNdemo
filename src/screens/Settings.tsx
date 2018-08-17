@@ -3,25 +3,17 @@ import {
     Platform, 
     StyleSheet, 
     Text, 
-    View,
-    TouchableOpacity
+    View
 } from 'react-native';
 
-interface SettingProps {
+interface SettingsProps {
     navigator: Navigator
 }
-
-export default class App extends React.Component<SettingProps> {
+export default class App extends React.Component<SettingsProps> {
   render() {
     return (
       <View style={styles.container}>
-        <TouchableOpacity onPress={() => this.props.navigator.push({
-            screen: 'PushScreen',
-            title: 'More Setting'
-        })}>
-            <Text style={styles.welcome}>Setting</Text>
-            <Text>Click to see more setting</Text>
-        </TouchableOpacity>
+        <Text style={styles.welcome}>Settings here</Text>
       </View>
     );
   }
